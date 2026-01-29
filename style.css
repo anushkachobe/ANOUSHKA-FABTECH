@@ -1,0 +1,80 @@
+:root {
+    --bg-dark: #060b13;      
+    --card-dark: #1a2635;    
+    --vibrant-green: #3ec169; 
+    --white: #ffffff;
+    --text-dim: #a0aec0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background-color: var(--bg-dark); color: var(--white); scroll-behavior: smooth; overflow-x: hidden; }
+
+/* --- Navigation Fix: Locked to Dark --- */
+nav {
+    display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; 
+    background-color: #060b13 !important; position: sticky; top: 0; z-index: 1000; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.nav-logo { height: 50px; }
+.logo-text { font-family: 'Montserrat'; font-weight: 800; font-size: 1.3rem; color: #ffffff !important; }
+.logo-text span { color: var(--vibrant-green); }
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
+.nav-btn { background: var(--vibrant-green); color: #000 !important; padding: 10px 20px; border-radius: 4px; font-weight: 800; }
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh; background: linear-gradient(rgba(6, 11, 19, 0.7), rgba(6, 11, 19, 0.9)), 
+    url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1470');
+    background-size: cover; display: flex; align-items: center; padding: 0 8%;
+}
+.hero h1 { font-family: 'Montserrat'; font-size: 3.5rem; line-height: 1.1; margin: 20px 0; }
+.hero h1 span { color: var(--vibrant-green); }
+.hero p { color: var(--text-dim); max-width: 600px; font-size: 1.1rem; margin-bottom: 30px; }
+
+/* --- Stats Boxes --- */
+.stats-section { padding: 0 8%; margin-top: -50px; position: relative; z-index: 5; }
+.stats-container { display: flex; justify-content: space-around; background: var(--card-dark); padding: 30px; border-radius: 12px; border: 1px solid var(--vibrant-green); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.stat-box { text-align: center; }
+.stat-box h2 { font-size: 2.5rem; color: var(--vibrant-green); font-family: 'Montserrat'; }
+.stat-box p { color: var(--white); text-transform: uppercase; font-size: 0.8rem; font-weight: 700; }
+
+/* --- Content Sections --- */
+.section { padding: 80px 8%; }
+.dark-bg { background-color: #f1f8f3; color: #1a202c; } 
+.main-title { font-family: 'Montserrat'; font-size: 2.5rem; margin-bottom: 50px; }
+.sub-title { color: var(--vibrant-green); text-transform: uppercase; font-weight: 800; letter-spacing: 2px; font-size: 0.8rem; display: block; margin-bottom: 10px; }
+
+/* --- Grid & Cards --- */
+.about-container { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; }
+.owner-badge { display: flex; align-items: center; gap: 15px; margin-top: 30px; background: white; padding: 20px; border-radius: 8px; border-left: 5px solid var(--vibrant-green); }
+.why-card { background: #121d2b; padding: 40px; border-radius: 12px; color: white; border: 1px solid rgba(255,255,255,0.05); }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.p-card { background: var(--card-dark); padding: 40px 25px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); transition: 0.4s; text-align: center; }
+.p-card i { font-size: 2.5rem; color: var(--vibrant-green); margin-bottom: 15px; display: block; }
+.p-card:hover { border-color: var(--vibrant-green); transform: translateY(-10px); }
+
+/* --- Buttons --- */
+.btn { padding: 15px 35px; border-radius: 4px; font-weight: 800; text-decoration: none; display: inline-block; }
+.btn-main { background: var(--vibrant-green); color: #000; }
+.btn-alt { border: 2px solid var(--white); color: var(--white); margin-left: 15px; }
+
+/* --- Enquiry & Footer --- */
+.enquiry-section { background: var(--bg-dark); padding: 80px 8%; border-top: 1px solid rgba(255,255,255,0.1); }
+.enquiry-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; }
+.enquiry-form { display: flex; flex-direction: column; gap: 15px; }
+.enquiry-form input, .enquiry-form textarea { background: #1a2635; border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 5px; color: white; }
+.form-btn { background: var(--vibrant-green); border: none; padding: 18px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
+footer { padding: 40px; text-align: center; color: var(--text-dim); }
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; }
+
+/* --- Mobile View Adjustments --- */
+@media (max-width: 768px) {
+    .stats-container { flex-direction: column; gap: 20px; margin-top: 0; }
+    .hero h1 { font-size: 2.2rem !important; text-align: center; }
+    .about-container, .enquiry-wrapper { grid-template-columns: 1fr !important; }
+    .hero { text-align: center; justify-content: center; }
+    .btn-alt { margin-left: 0; margin-top: 10px; }
+    nav ul { display: none; }
+}
